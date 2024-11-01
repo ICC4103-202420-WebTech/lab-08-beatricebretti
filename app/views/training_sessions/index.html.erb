@@ -1,0 +1,15 @@
+<h1>My Training Sessions</h1>
+
+<%= link_to 'New Training Session', new_training_session_path, class: 'btn btn-primary' %>
+
+<% @training_sessions.each do |session| %>
+  <div class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= session.activity %> on <%= session.date %></h5>
+      <p class="card-text">Duration: <%= session.duration %> minutes</p>
+      <p class="card-text"><%= session.description %></p>
+      <%= link_to 'Edit', edit_training_session_path(session), class: 'btn btn-warning' %>
+      <%= link_to 'Delete', training_session_path(session), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+<% end %>
