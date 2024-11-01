@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root 'training_sessions#index'
+  resources :training_sessions, only: [:index, :new, :create, :edit, :update, :destroy]
 end
