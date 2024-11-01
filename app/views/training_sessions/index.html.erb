@@ -9,7 +9,7 @@
       <p class="card-text">Duration: <%= session.duration %> minutes</p>
       <p class="card-text"><%= session.description %></p>
       <%= link_to 'Edit', edit_training_session_path(session), class: 'btn btn-warning' %>
-      <%= link_to 'Delete', training_session_path(session), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <%= button_to 'Delete', training_session_path(session), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
     </div>
   </div>
 <% end %>
